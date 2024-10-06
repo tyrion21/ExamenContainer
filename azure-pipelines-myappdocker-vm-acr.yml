@@ -4,11 +4,11 @@ trigger:
       - main
 
 variables:
-  VM_IP_PUBLICA: '20.97.212.117'  # Se debe colocar la IP pública de tu máquina virtual
-  IMAGE_NAME: 'myapp-nginx-s6'  # Se debe colocar el Nombre de la imagen que será descargada desde ACR
-  ACR_NAME: 'myappdevopss6'  # Se debe colocar el Nombre de tu Azure Container Registry (ACR)
-  ACR_USERNAME: 'myappdevopss6'  # Se debe colocar el Nombre de usuario del ACR
-  ACR_PASSWORD: 'objyVoXSHYRTjC7SSDPKdcC48UldBbaoyLeYmLSHIX+ACRAbeSUo'  # Se debe colocar la Contraseña del ACR
+  VM_IP_PUBLICA: '74.249.13.109'  # Se debe colocar la IP pública de tu máquina virtual
+  IMAGE_NAME: 'examen-nginx'  # Se debe colocar el Nombre de la imagen que será descargada desde ACR
+  ACR_NAME: 'examencontainer'  # Se debe colocar el Nombre de tu Azure Container Registry (ACR)
+  ACR_USERNAME: 'examencontainer'  # Se debe colocar el Nombre de usuario del ACR
+  ACR_PASSWORD: 'm7V02waOH1xfgEsdhViyBxKQYe/Y4pFH/gimjDJ7GL+ACRAMIlIM'  # Se debe colocar la Contraseña del ACR
 
 stages:
   - stage: Deploy
@@ -16,7 +16,7 @@ stages:
       - deployment: DeployToVM
         displayName: 'Deploy to VM'
         environment:
-          name: 'VM-DEVOPS-S6'  # Nombre del entorno configurado en Azure DevOps
+          name: 'vm-examen'  # Nombre del entorno configurado en Azure DevOps
           resourceType: VirtualMachine  # Especifica que se conecta a una máquina virtual
         strategy:
           runOnce:
